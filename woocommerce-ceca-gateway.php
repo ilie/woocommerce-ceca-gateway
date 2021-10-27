@@ -4,10 +4,10 @@ Plugin Name: Pasarela de pago para CECA (modulosdepago.es)
 Plugin URI: http://modulosdepago.es/
 Description: La pasarela de pago CECA de para WooCommerce de ZhenIT Software <a href="http://www.modulosdepago.es/">vea otras pasarelas de ZhenIT Software</a>.
 Version: 2.3.0
-Author: Mikel Martin (Modified by Ilie Florea) 
+Author: Mikel Martin (Modified by Ilie Florea)
 Author URI: http://ZhenIT.com/
-WC requires at least: 3.0.0
-WC tested up to: 3.9.3
+WC requires at least: 4.9.0
+WC tested up to: 4.9.3
 	Copyright: © 2009-2012 ZhenIT Software.
 	License: GNU General Public License v3.0
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -70,7 +70,7 @@ function woocommerce_ceca_init() {
 			// Hooks
 			add_action('woocommerce_receipt_' . $this->id, array($this, 'receipt_page'));
 			add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
-			add_action('woocommerce_api_woocommerce_' . $this->id, array( $this, 'check_' . $this->id . '_resquest' ) );			
+			add_action('woocommerce_api_woocommerce_' . $this->id, array( $this, 'check_' . $this->id . '_resquest' ) );
 			//BOF dejamos por compatibilidad con las versiones 1.6.x
 			add_action('init', array(&$this, 'check_' . $this->id. '_resquest'));
 			add_action('woocommerce_update_options_payment_gateways', array($this, 'process_admin_options'));
